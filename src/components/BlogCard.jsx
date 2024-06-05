@@ -2,7 +2,7 @@ import React from "react";
 
 function BlogCard({post}) {
   console.log(post)
-  return <div className="max-w-4xl p-4 my-10 border bg-gradient-to-br from-slate-50 to-emerald-100 rounded-xl">
+  return <div className="max-w-4xl p-4 my-10 space-y-3 border bg-gradient-to-br from-slate-50 to-emerald-100 rounded-xl">
     <div>
       <h1 className="text-xl font-semibold">{post.title}</h1>
       <p>By <span className="italic font-thin ">{post.author}</span> on <span className="border-b border-black border-dashed">{post.category}</span></p>
@@ -11,10 +11,10 @@ function BlogCard({post}) {
     <div>
       <p className="line-clamp-3 ">{post.content}</p>
     </div>
-    <div>
+    <div className="flex">
       <p>Tags:</p>
       <div className="flex gap-2">
-        {post && post.tags.map((tag , index)=> <p className="px-2 rounded bg-gradient-to-br from-slate-50 to-teal-100" key={index}>{tag}</p>)}
+        {post && post.tags.map((tag , index)=> <p className="px-2 italic rounded bg-gradient-to-br from-slate-50" key={index}>{tag}</p>)}
       </div>
     </div>
   </div>;
